@@ -1,0 +1,44 @@
+<div class="container">
+  <mat-card>
+    <mat-card-header class="mat-headline-5">Contact Form</mat-card-header>
+    <form [formGroup]="contactForm" (ngSubmit)="$event.preventDefault(); submitForm()">
+      <mat-form-field appearance="outline">
+        <mat-label>Username</mat-label>
+        <input matInput
+          placeholder="Username"
+          type="text"
+          required
+          formControlName="senderName">
+          <mat-error *ngIf="contactForm.get('senderName')?.hasError('required')">This is require</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput
+          placeholder="example@example.com"
+          type="email"
+          required
+          formControlName="senderEmail"
+          >
+          <mat-error *ngIf="contactForm.get('senderEmail')?.hasError('required')">This is require</mat-error>
+          <mat-error *ngIf="contactForm.get('senderEmail')?.hasError('email')">Invalid email address </mat-error>
+          <mat-error *ngIf="contactForm.get('senderEmail')?.hasError('invalidEmailDomain')">The email provider is not allowed.</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Message</mat-label>
+        <textarea matInput
+          type="text"
+          minlength="10"
+          required
+          formControlName="senderMessage"
+          ></textarea>
+          <mat-error *ngIf="">Min length of 10</mat-error>
+      </mat-form-field>
+
+      <button mat-flat-button
+        color="primary" type="submit" [disabled]="!contactForm.valid">Send Message</button>
+    </form>
+  </mat-card>
+
+</div>

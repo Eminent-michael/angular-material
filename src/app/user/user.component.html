@@ -1,0 +1,34 @@
+<div class="container">
+    <mat-card>
+      <mat-card-header class="mat-headline-5">SignUp</mat-card-header>
+      <form>
+        <mat-form-field appearance="outline">
+          <mat-label>Username</mat-label>
+          <input matInput
+            placeholder="Username"
+            type="text"
+            required>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input matInput
+            placeholder="example@example.com"
+            type="email"
+            required>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Enter your password</mat-label>
+          <input matInput
+            type="password"
+            required>
+          <mat-hint>Password must be 8 characters</mat-hint>
+        </mat-form-field>
+
+
+        <button mat-flat-button
+          color="primary">Sign up</button>
+      </form>
+    </mat-card>
+</div>

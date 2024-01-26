@@ -1,0 +1,24 @@
+<div class="container">
+  <mat-card>
+    <mat-card-header>
+      <img mat-card-avatar src="https://img.freepik.com/premium-photo/anime-male-avatar_950633-917.jpg?w=740" alt="">
+      <mat-card-title>Afolabi Eminent</mat-card-title>
+      <mat-card-subtitle class="mat-subtitle">Professional</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="https://img.freepik.com/premium-photo/anime-male-avatar_950633-917.jpg?w=740">
+    <p style="padding: 13px;">
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo, sequi? Iusto maiores mollitia vel?
+    </p>
+    <mat-card-actions>
+      <button mat-fab color="primary">Like</button>
+      <button mat-fab color="warn">Hate</button>
+    </mat-card-actions>
+  </mat-card>
+
+  <div>
+    <mat-card *ngFor="let post of posts">
+      <a href="{{post.path}}">{{post.title}}</a>
+    </mat-card>
+  </div>
+
+</div>
